@@ -12,14 +12,17 @@ package banco;
 public class Conta {
  
     int numero;
-    String cliente;
+    
+    Cliente objCliente = new Cliente();
+    Cliente ibjClienteContaConjunto;
     double saldo, limite;
+    String cliente;
     
     public void saca(double quantidade){ //double quantidade é um parâmetro
         if(quantidade <= this.saldo){
         this.saldo = this.saldo - quantidade;
         }else{
-            System.out.println("Prezado " +this.cliente+ ",,  ob Quantidade de saldo insuficiente, seu saldo é: "+this.saldo);
+            System.out.println("Prezado " +this.objCliente.nome+ ", Quantidade de saldo insuficiente, seu saldo é: "+this.saldo);
         }
 }
   public void deposita(double quantidade){

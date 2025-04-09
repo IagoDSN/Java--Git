@@ -13,8 +13,11 @@ public class Programa {
     public static void main(String[] args) {
         Conta minhaConta = new Conta(); //obj
         Conta outraConta = new Conta(); //obj
+        //Cliente objClienteIago = new Cliente();
+        
+        //minhaConta.objCliente = objClienteIago;
     
-     minhaConta.cliente = "Iago";
+     minhaConta.objCliente.nome = "Iago";
     
     minhaConta.deposita(10000); 
     outraConta.deposita(20000);
