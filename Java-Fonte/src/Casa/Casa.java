@@ -32,6 +32,6 @@ public class Casa {
         }
         public void pintar(String s){
             this.corCasa = s;
-            System.out.println("Agora a porta está com a cor "+this.corCasa);
+            System.out.println("Agora a casa está com a cor "+this.corCasa);
         }
 }

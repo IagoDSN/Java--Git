@@ -27,9 +27,9 @@ public class TesteCasa {
         System.out.println("A porta está "+port.abrida());
         port.pintar("rosa");
         port.abrir();
-        System.out.println("A porta está aberta"+port.abrida());
+        System.out.println("A porta está aberta? "+ port.abrida());
         port.fechar();
-        System.out.println("A porta está aberta "+port.abrida()+"\n");
+        System.out.println("A porta está aberta? "+port.abrida()+"\n");
         
     //Casa
     casinha.porta1.abrir();
@@ -38,7 +38,6 @@ public class TesteCasa {
     casinha.quantasEstaoAbertas();
     
     casinha.pintar("verde");
-    
     
     }
 }
