@@ -10,10 +10,36 @@ package banco;
  * @author 13410289682
  */
 public class Funcionario {
-    String nome, cpf, rg;
+   private String nome, cpf, rg;
     
-    double salario;
-    boolean trabalhaQui;
+     public String getNome(){
+        return this.nome;
+    }
+    public String getCpf(){
+        return this.cpf;
+    }
+    public String getRg(){
+        return this.rg;
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
+    public void setRg(String rg){
+        this.rg = rg;
+    }
+    
+    private double salario;
+    private boolean trabalhaQui;
+    
+    public double getSalario(){
+        return this.salario;
+    }
+    public void setSalario(double salario){
+        this.salario = salario;
+    }
     
     public void aumentarSalario(double valor){
         this.salario = this.salario + valor;
@@ -24,9 +50,9 @@ public class Funcionario {
         }
     }
     public void mostra(){
-            System.out.println("Nome: "+this.nome+ 
-                    " \ncpf: "+this.cpf+
-                    " \nrg: "+this.rg+
-                    " \nSalario: "+this.salario+"\n");
+            System.out.println("Nome: "+this.getNome()+ 
+                    " \ncpf: "+this.getCpf()+
+                    " \nrg: "+this.getRg()+
+                    " \nSalario: "+this.getSalario()+"\n");
         }
 }

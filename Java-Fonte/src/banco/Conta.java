@@ -11,18 +11,31 @@ package banco;
  */
 public class Conta {
  
-    int numero;
+   private int numero;
     
     Cliente objCliente = new Cliente();
     Cliente ibjClienteContaConjunto;
-    double saldo, limite;
-    String cliente;
+    private double saldo, limite;
+    private String cliente;
+    
+    public double getSaldo(){
+        return this.saldo + this.limite;
+    }
+    public int getNumero(){
+        return this.numero;
+    }
+    public void setNunmero(int numero){
+        this.numero = numero;
+    }
+    public void setNome(String nome){
+        this.cliente = nome;
+    }
     
     public void saca(double quantidade){ //double quantidade é um parâmetro
         if(quantidade <= this.saldo){
         this.saldo = this.saldo - quantidade;
         }else{
-            System.out.println("Prezado " +this.objCliente.nome+ ", Quantidade de saldo insuficiente, seu saldo é: "+this.saldo);
+            System.out.println("Prezado " +this.objCliente.getNome()+ ", Quantidade de saldo insuficiente, seu saldo é: "+this.saldo);
         }
 }
   public void deposita(double quantidade){
@@ -33,7 +46,7 @@ public class Conta {
         this.saca(quantidade);
         destino.deposita(quantidade);
        }else{
-           System.out.println("Quantidade de saque insuficiente, seu saldo atual: "+this.saldo+" Quantidade transferida canceleda, quantidade: " +quantidade);  
+           System.out.println("Quantidade de saque insuficiente, seu saldo atual: "+this.getSaldo()+" Quantidade transferida canceleda, quantidade: " +quantidade);  
        }
   }
 }

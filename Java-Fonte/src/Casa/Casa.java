@@ -11,11 +11,17 @@ package Casa;
  */
 public class Casa {
         
-    String corCasa;
+   private String corCasa;
         Porta porta1 = new Porta();
         Porta porta2 = new Porta();
         Porta porta3 = new Porta();
         
+        public void setCorCasa(String cor){
+            this.corCasa = cor;
+        }
+        public String getCorCasa(){
+            return this.corCasa;
+        }
         
         public void quantasEstaoAbertas(){
             int quant = 0;
@@ -31,7 +37,7 @@ public class Casa {
             System.out.println("Estão abertas "+quant+" portas");
         }
         public void pintar(String s){
-            this.corCasa = s;
-            System.out.println("Agora a casa está com a cor "+this.corCasa);
+            this.setCorCasa(s);
+            System.out.println("Agora a casa está com a cor "+this.getCorCasa());
         }
 }

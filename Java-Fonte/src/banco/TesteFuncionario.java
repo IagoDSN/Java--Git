@@ -13,16 +13,16 @@ public class TesteFuncionario {
     public static void main(String[] args) {
         Funcionario fun1 = new Funcionario();
         
-        fun1.nome = "Joao Gabriel";
-        fun1.salario = 3000;
+        fun1.setNome("Joao Gabriel");
+        fun1.setSalario(3000);
         
-        fun1.cpf = "134102896-82";
-        fun1.rg = "924067";
+        fun1.setCpf("134102896-82");
+        fun1.setRg("924067");
         
         fun1.mostra();
         
         fun1.aumentarSalario(300);
-        System.out.println("Salario do "+fun1.nome+" com aumento: "+fun1.salario);
+        System.out.println("Salario do "+fun1.getNome()+" com aumento: "+fun1.getSalario());
                 
         fun1.demitir();
         System.out.println("Fucionario Demitido!");

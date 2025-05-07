@@ -10,6 +10,15 @@ package banco;
  * @author 13410289682
  */
 public class Cliente {
- String nome, cpf, rg;
-    
+ private String nome, cpf, rg;
+ 
+    public String getNome(){
+        return this.nome;
+    }
+    public String getCpf(){
+        return this.cpf;
+    }
+    public String getRg(){
+        return this.rg;
+    }
 }

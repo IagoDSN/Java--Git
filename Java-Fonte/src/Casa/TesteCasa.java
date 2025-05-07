@@ -17,11 +17,11 @@ public class TesteCasa {
         Casa casinha = new Casa();
         
      //Pessoa
-     pes.nome = "Iago";
-     pes.idade = 16;
+     pes.setNome("Iago");
+     pes.setIdade(16);
      pes.fazAniversario();
      
-     System.out.println("Pessoa: "+pes.nome+"\nIdade: "+pes.idade+"\n");
+     System.out.println("Pessoa: "+pes.getNome()+"\nIdade: "+pes.getIdade()+"\n");
      
      //Porta
         System.out.println("A porta está "+port.abrida());
