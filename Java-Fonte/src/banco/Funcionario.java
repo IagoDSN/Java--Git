@@ -11,6 +11,27 @@ package banco;
  */
 public class Funcionario {
    private String nome, cpf, rg;
+   private static int totalFuncionario;
+   
+   public Funcionario(){
+       System.out.println("Chamando funcionario...");
+       Funcionario.totalFuncionario++;
+   }
+   public int getFuncionario(){
+       return this.totalFuncionario;
+   }
+   
+    public Funcionario(String nome, String cpf, String rg, double salario, boolean trabalhaQui) {
+        this();
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.salario = salario;
+        this.trabalhaQui = trabalhaQui;
+    }
+   
+   
+  
     
      public String getNome(){
         return this.nome;

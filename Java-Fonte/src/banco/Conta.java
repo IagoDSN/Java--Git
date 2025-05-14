@@ -14,9 +14,40 @@ public class Conta {
    private int numero;
     
     Cliente objCliente = new Cliente();
-    Cliente ibjClienteContaConjunto;
+    Cliente objClienteContaConjunto;
     private double saldo, limite;
     private String cliente;
+    private static int totalDeContas;
+    
+    public Conta(){
+        System.out.println("Construindo uma conta...");
+        //Conta.totalDeContas = Conta.totalDeContas + 1;
+        Conta.totalDeContas++;
+    }
+
+    public static int getTotalDeContas() {
+        return totalDeContas;
+    }
+    
+    public Conta(double saldo){
+        this();
+        this.saldo = saldo;
+    }
+    
+    public Conta(double saldo, double limite, int numero){
+        this(saldo);
+        //this.saldo = saldo;
+        this.limite = limite;
+        this.numero = numero;
+    }
+
+    public Conta(int numero, Cliente objClienteContaConjunto, double saldo, double limite) {
+        this(saldo, limite, numero);
+        this.objClienteContaConjunto = objClienteContaConjunto;
+        this.cliente = cliente;
+    }
+    
+    
     
     public double getSaldo(){
         return this.saldo + this.limite;
