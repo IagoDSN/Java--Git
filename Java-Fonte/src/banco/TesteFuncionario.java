@@ -13,6 +13,7 @@ public class TesteFuncionario {
     public static void main(String[] args) {
         Funcionario fun1 = new Funcionario();
         Funcionario fun2 = new Funcionario("Jose", "1324567564", "745974", 1300.7, true);
+        Funcionario fun3 = new Funcionario("asd", "1324567564", "745974", 1300.7, true);
         
         fun1.setNome("Joao Gabriel");
         fun1.setSalario(3000);
@@ -31,6 +32,8 @@ public class TesteFuncionario {
         System.out.println("\nNome do funcionario 2: "+fun2.getNome());
         
         System.out.println("Total de funcionarios: "+fun1.getFuncionario());
+       
+        
         
     }
 }

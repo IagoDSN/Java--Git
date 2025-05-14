@@ -11,11 +11,14 @@ package banco;
  */
 public class Funcionario {
    private String nome, cpf, rg;
+   private int identificador;
    private static int totalFuncionario;
    
    public Funcionario(){
        System.out.println("Chamando funcionario...");
        Funcionario.totalFuncionario++;
+       this.identificador = Funcionario.totalFuncionario;
+       System.out.println("Id do funcionario "+this.identificador+" : "+this.identificador);
    }
    public int getFuncionario(){
        return this.totalFuncionario;
