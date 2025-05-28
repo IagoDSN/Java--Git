@@ -10,7 +10,12 @@ package Atividade01;
  * @author 13410289682
  */
 public class Secretaria {
-    Professor professor = new Professor();
-    Curso curso = new Curso();
-    Aluno aluno = new Aluno();
+    public void matricularAluno(Curso curso, Aluno aluno) {
+        curso.adicionarAluno(aluno);
+        System.out.println("Aluno " + aluno.getNome() + " matriculado no curso " + curso.getNome());
+    }
+
+    public void emitirCertificado(Aluno aluno, Curso curso) {
+        System.out.println("Certificado emitido para " + aluno.getNome() + " no curso " + curso.getNome());
+    }
 }

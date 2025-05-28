@@ -13,11 +13,24 @@ public class Professor {
     private String nome, cpf;
     private double salario;
 
-    Aluno aluno = new Aluno();    
+    private Aluno aluno;    
 
     public Professor() {
-        
+        System.out.println("O professor foi chamado");
     }
+
+    public Professor(String nome, String cpf, double salario, Aluno aluno) {
+        this();
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+        this.aluno = aluno;
+    }
+
+    Professor(String dr_Silva, String matemática) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
     public String getNome() {
         return nome;

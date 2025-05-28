@@ -24,6 +24,10 @@ public class Aluno {
         this.matricula = matricula;
     }
 
+    Aluno(String nomeAluno, int idadeAluno) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNome() {
         return nome;
     }
