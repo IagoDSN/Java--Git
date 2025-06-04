@@ -12,12 +12,16 @@ package banco;
 public class Conta {
  
    private int numero;
-    
+
     Cliente objCliente = new Cliente();
     Cliente objClienteContaConjunto;
     private double saldo, limite;
     private String cliente;
     private static int totalDeContas;
+    
+    void atualiza(double taxa) {
+    this.saldo += this.saldo * taxa;
+    }
     
     public Conta(){
         System.out.println("Construindo uma conta...");

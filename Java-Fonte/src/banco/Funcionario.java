@@ -13,19 +13,15 @@ public class Funcionario {
    private String nome, cpf, rg;
    private int identificador;
    private static int totalFuncionario;
+
+    public Funcionario() {
+    }
    
-   public Funcionario(){
-       System.out.println("Chamando funcionario...");
-       Funcionario.totalFuncionario++;
-       this.identificador = Funcionario.totalFuncionario;
-       System.out.println("Id do funcionario "+this.identificador+" : "+this.identificador);
-   }
-   public int getFuncionario(){
-       return this.totalFuncionario;
+   public Funcionario(String nome){
+      this.nome = nome;
    }
    
     public Funcionario(String nome, String cpf, String rg, double salario, boolean trabalhaQui) {
-        this();
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -33,8 +29,9 @@ public class Funcionario {
         this.trabalhaQui = trabalhaQui;
     }
    
-   
-  
+     public int getFuncionario(){
+       return this.totalFuncionario;
+   }
     
      public String getNome(){
         return this.nome;
@@ -79,4 +76,8 @@ public class Funcionario {
                     " \nrg: "+this.getRg()+
                     " \nSalario: "+this.getSalario()+"\n");
         }
+    
+    public double getBonificacao(){
+        return this.salario * 0.10;
+    }
 }
