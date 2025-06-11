@@ -10,13 +10,11 @@ package banco;
  * @author 13410289682
  */
 public class ContaCorrente extends Conta{
-    
-    @Override
-    public void atualiza(double taxa) {
-        super.atualiza(this.getSaldo() * (taxa * 2));
+     void atualiza (double taxa){
+        super.deposita(this.getSaldo() * (taxa * 2));
     }
-    @Override
-    public void deposita(double valor) {
-      super.deposita(valor - 1);
-}
+        @Override
+    public void deposita(double valor){
+        super.deposita(valor - 1);
+    }
 }

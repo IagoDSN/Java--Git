@@ -12,11 +12,7 @@ package banco;
  */
 public class ContaPoupanca extends Conta{
     @Override
-    void atualiza(double taxa) {
-        super.atualiza(taxa * 3);
+    void atualiza(double taxa){
+       super.atualiza(taxa * 3);
     }
-        @Override
-    public void deposita(double valor) {
-      super.deposita(valor - 1);
-}
 }
