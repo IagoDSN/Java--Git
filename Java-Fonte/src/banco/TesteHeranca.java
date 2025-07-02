@@ -12,7 +12,7 @@ package banco;
 public class TesteHeranca {
     public static void main(String[] args) {
         
- Funcionario objFuncionario = new Funcionario();
+ Funcionario objFuncionario = new Gerente();
     objFuncionario.setNome("Tulio");
     objFuncionario.setSalario(10000);
  

@@ -11,9 +11,8 @@ package banco;
  */
 public class TesteFuncionario {
     public static void main(String[] args) {
-        Funcionario fun1 = new Funcionario();
-        Funcionario fun2 = new Funcionario("Jose", "1324567564", "745974", 1300.7, true);
-        Funcionario fun3 = new Funcionario("asd", "1324567564", "745974", 1300.7, true);
+        Funcionario fun1 = new Gerente();
+        Funcionario fun2 = new Supervisor("José");
         
         fun1.setNome("Joao Gabriel");
         fun1.setSalario(3000);

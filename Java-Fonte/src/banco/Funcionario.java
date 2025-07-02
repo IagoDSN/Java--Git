@@ -9,7 +9,7 @@ package banco;
  *
  * @author 13410289682
  */
-public class Funcionario {
+public abstract class Funcionario {
    private String nome, cpf, rg;
    private int identificador;
    private static int totalFuncionario;
@@ -77,7 +77,5 @@ public class Funcionario {
                     " \nSalario: "+this.getSalario()+"\n");
         }
     
-    public double getBonificacao(){
-        return this.salario * 0.10;
-    }
+    public abstract double getBonificacao();
 }
