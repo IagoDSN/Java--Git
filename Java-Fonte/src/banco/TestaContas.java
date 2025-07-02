@@ -11,7 +11,7 @@ package banco;
  */
 public class TestaContas {
      public static void main(String[] args) {
-    Conta c = new Conta();
+    Conta c = new ContaCorrente();
     ContaCorrente cc = new ContaCorrente();
     ContaPoupanca cp = new ContaPoupanca();
     c.deposita(1000);

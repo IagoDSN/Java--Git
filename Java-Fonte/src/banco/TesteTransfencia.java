@@ -11,8 +11,8 @@ package banco;
  */
 public class TesteTransfencia {
     public static void main(String[] args) {
-        Conta iagoConta = new Conta(); //obj
-        Conta jorgeConta = new Conta(); //obj
+        Conta iagoConta = new ContaCorrente(); //obj
+        Conta jorgeConta = new ContaCorrente(); //obj
     
      iagoConta.setNome("iago");
      jorgeConta.setNome("Jorge");

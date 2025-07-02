@@ -19,16 +19,16 @@ public class TesteConstrutor {
        String nome = entrada.nextLine();
        System.out.println("Nome: "+nome);
        
-        Conta x = new Conta();
+        Conta x = new ContaCorrente();
         x.deposita(2000);
         
-        Conta y = new Conta(10000);
+        Conta y = new ContaCorrente();
         
-        Conta z = new Conta(15000.50, 20000, 0322025);
+        Conta z = new ContaCorrente();
         z.deposita(5000);
         
         Cliente objClienteMaria = new Cliente();
-        Conta w = new Conta(323, objClienteMaria, 10000, 0);
+        Conta w = new ContaCorrente();
         
         System.out.println("Saldo da conta x: "+x.getSaldo());
         System.out.println("Saldo da conta y: "+y.getSaldo());

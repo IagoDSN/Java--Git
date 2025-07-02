@@ -11,8 +11,8 @@ package banco;
  */
 public class Programa {
     public static void main(String[] args) {
-        Conta minhaConta = new Conta(); //obj
-        Conta outraConta = new Conta(); //obj
+        Conta minhaConta = new ContaCorrente(); //obj
+        Conta outraConta = new ContaCorrente(); //obj
         //Cliente objClienteIago = new Cliente();
         
         //minhaConta.objCliente = objClienteIago;

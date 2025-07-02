@@ -9,7 +9,7 @@ package banco;
  *
  * @author 13410289682
  */
-public class Conta {
+public abstract class Conta {
  
    private int numero;
 
@@ -19,9 +19,7 @@ public class Conta {
     private String cliente;
     private static int totalDeContas;
     
-    void atualiza(double taxa) {
-    this.saldo += this.saldo * taxa;
-    }
+    abstract void atualiza(double taxaSelic);
     
     public Conta(){
         System.out.println("Construindo uma conta...");
@@ -84,4 +82,5 @@ public class Conta {
            System.out.println("Quantidade de saque insuficiente, seu saldo atual: "+this.getSaldo()+" Quantidade transferida canceleda, quantidade: " +quantidade);  
        }
   }
+   
 }
