@@ -13,7 +13,7 @@ public class TesteFuncionario {
 
     public static void main(String[] args) {
         Funcionario fun1 = new Gerente();
-        Funcionario fun2 = new Supervisor("José");
+        Funcionario fun2 = new Diretor();
 
         fun1.setNome("Joao Gabriel");
         fun1.setSalario(3000);

@@ -9,27 +9,11 @@ package banco;
  *
  * @author 13410289682
  */
-public class Gerente extends Funcionario implements Autenticavel{
-    //String nome;
-    //String cpf;
-    //double salario;
+public class Diretor extends Funcionario implements Autenticavel, Estacionamento{
     
     private int senha;
-    private int numeroDeFuncionariosGerenciados;
-
-     public Gerente(String nome) {
-        super(nome);
-    }
-
-    public Gerente() {
-        super();
-    }
     
-    public void setSenha(int senha) {
-        this.senha = senha;
-    }
-    
-    @Override
+      @Override
     public boolean autentica(int senha){
         if(this.senha == senha){
             System.out.println("Acesso permitido!");
@@ -41,10 +25,9 @@ public class Gerente extends Funcionario implements Autenticavel{
         }
     }
     
-    
     @Override
     public double getBonificacao(){
-        return this.getSalario() * 0.15;
+        return this.getSalario() * 0.10;
     }
 
     @Override
@@ -54,4 +37,8 @@ public class Gerente extends Funcionario implements Autenticavel{
         System.out.println("Outros dados..........");
     }
     
+    public boolean autorizaEstacionamento(){
+        System.out.println("Estacionamento autorizado para o Diretor, vaga 12");
+        return true;
+    }
 }
