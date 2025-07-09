@@ -9,7 +9,7 @@ package banco;
  *
  * @author 13410289682
  */
-public interface Estacionamento {
-    
-        public boolean autorizaEstacionamento();
+public interface Tributavel {
+double calculaTributos();
 }
+    

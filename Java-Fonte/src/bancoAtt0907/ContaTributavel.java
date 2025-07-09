@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package banco;
+package bancoAtt0907;
 
 /**
  *
  * @author 13410289682
  */
-public interface Estacionamento {
+public interface ContaTributavel extends Conta, Tributavel {
     
-        public boolean autorizaEstacionamento();
 }

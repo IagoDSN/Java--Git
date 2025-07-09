@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package banco;
+package bancoAtt0907;
 
 /**
  *
  * @author 13410289682
  */
-public interface Estacionamento {
+public class SeguroDeVida implements Tributavel {
+public double calculaTributos() {
+return 42;
+}
     
-        public boolean autorizaEstacionamento();
 }

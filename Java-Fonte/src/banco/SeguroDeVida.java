@@ -9,7 +9,9 @@ package banco;
  *
  * @author 13410289682
  */
-public interface Estacionamento {
+public class SeguroDeVida implements Tributavel {
+public double calculaTributos() {
+return 42;
+}
     
-        public boolean autorizaEstacionamento();
 }

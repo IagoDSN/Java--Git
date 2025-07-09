@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package banco;
+package bancoAtt0907;
 
 /**
  *
  * @author 13410289682
  */
-public interface Estacionamento {
+public class Secretaria extends Funcionario{
+
+    @Override
+    public double getBonificacao() {
+      return this.getSalario() * 0.10;
+    }
     
-        public boolean autorizaEstacionamento();
 }
