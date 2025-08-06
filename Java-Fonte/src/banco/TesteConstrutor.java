@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author 13410289682
  */
 public class TesteConstrutor {
-   public static void main(String[] args) {
+   public static void main(String[] args) throws ValorInvalidoException {
        Scanner entrada = new Scanner(System.in, "ISO_8859_1");
        
        System.out.println("Digite seu nome: ");

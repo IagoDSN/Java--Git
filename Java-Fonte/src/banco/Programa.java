@@ -5,6 +5,9 @@
  */
 package banco;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 13410289682
@@ -21,8 +24,16 @@ public class Programa {
     
      minhaConta.setNome("Iago");
      outraConta.setNome("Jorge");
-    minhaConta.deposita(10000); 
-    outraConta.deposita(20000);
+        try { 
+            minhaConta.deposita(10000);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            outraConta.deposita(20000);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     minhaConta.saca(50000);
     minhaConta.transfere(outraConta, 200);

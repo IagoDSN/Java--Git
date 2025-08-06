@@ -5,6 +5,9 @@
  */
 package banco;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 13410289682
@@ -14,9 +17,21 @@ public static void main(String[] args) {
 Conta c = new ContaCorrente();
 Conta cc = new ContaCorrente();
 Conta cp = new ContaPoupanca();
-c.deposita(1000);
-cc.deposita(1000);
-cp.deposita(1000);
+    try {
+        c.deposita(1000);
+    } catch (ValorInvalidoException ex) {
+        Logger.getLogger(TestaAtualizadorDeContas.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    try {
+        cc.deposita(1000);
+    } catch (ValorInvalidoException ex) {
+        Logger.getLogger(TestaAtualizadorDeContas.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    try {
+        cp.deposita(1000);
+    } catch (ValorInvalidoException ex) {
+        Logger.getLogger(TestaAtualizadorDeContas.class.getName()).log(Level.SEVERE, null, ex);
+    }
 AtualizadorDeContas adc = new AtualizadorDeContas(0.10);
 adc.roda(c);
 adc.roda(cc);

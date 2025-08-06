@@ -5,16 +5,23 @@
  */
 package banco;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 13410289682
  */
 public class TestaContas {
-     public static void main(String[] args) {
+     public static void main(String[] args) throws ValorInvalidoException {
     Conta c = new ContaCorrente();
     ContaCorrente cc = new ContaCorrente();
     ContaPoupanca cp = new ContaPoupanca();
-    c.deposita(1000);
+         try {
+             c.deposita(1000);
+         } catch (ValorInvalidoException ex) {
+             Logger.getLogger(TestaContas.class.getName()).log(Level.SEVERE, null, ex);
+         }
     cc.deposita(1000);
     cp.deposita(1000);
     c.atualiza(0.10);

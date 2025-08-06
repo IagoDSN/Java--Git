@@ -81,7 +81,7 @@ public abstract class Conta {
         }
     }
 
-    public void transfere(Conta destino, double quantidade) {
+    public void transfere(Conta destino, double quantidade) throws ValorInvalidoException {
         if (this.saldo >= quantidade) {
             this.saca(quantidade);
             destino.deposita(quantidade);
