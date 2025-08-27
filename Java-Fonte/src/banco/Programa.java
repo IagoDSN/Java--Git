@@ -36,7 +36,11 @@ public class Programa {
         }
 
     minhaConta.saca(50000);
-    minhaConta.transfere(outraConta, 200);
+        try {
+            minhaConta.transfere(outraConta, 200);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
         System.out.println("Saldo da minha conta: " +minhaConta.getSaldo());
         System.out.println("Saldo da outra conta: " +outraConta.getSaldo());
