@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package petshop;
+package modelo;
 
 /**
  *
- * @author Iagod
+ * @author 13410289682
  */
-public class Main {
-    public static void main(String[] args) {
-        
-        PetShop yoyoAnimais = new PetShop();
-        
-        
-    }
+public class cidade {
     
 }
