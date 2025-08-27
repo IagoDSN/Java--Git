@@ -12,12 +12,12 @@ import java.util.Objects;
  *
  * @author 13410289682
  */
-public class cidade implements Serializable{
+public class Cidade implements Serializable{
     private Integer codigoCidade;
     private String nomeCidade;
     private String ufCidade;
 
-    public cidade() {
+    public Cidade() {
     }
 
     public Integer getCodigoCidade() {
@@ -62,7 +62,7 @@ public class cidade implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final cidade other = (cidade) obj;
+        final Cidade other = (Cidade) obj;
         if (!Objects.equals(this.codigoCidade, other.codigoCidade)) {
             return false;
         }

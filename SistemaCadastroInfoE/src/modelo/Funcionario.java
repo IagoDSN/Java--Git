@@ -23,7 +23,7 @@ public class Funcionario implements Serializable{
     private Double salarioFuncionario;
     private Calendar nascimentoFuncionario;
     
-    private cidade objCidade;
+    private Cidade objCidade;
 
     public Integer getCodigoFuncionario() {
         return codigoFuncionario;
@@ -57,11 +57,11 @@ public class Funcionario implements Serializable{
         this.nascimentoFuncionario = nascimentoFuncionario;
     }
 
-    public cidade getObjCidade() {
+    public Cidade getObjCidade() {
         return objCidade;
     }
 
-    public void setObjCidade(cidade objCidade) {
+    public void setObjCidade(Cidade objCidade) {
         this.objCidade = objCidade;
     }
 
