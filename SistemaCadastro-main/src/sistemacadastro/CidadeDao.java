@@ -20,7 +20,7 @@ public class CidadeDao {
     
     public boolean salvar(Cidade objCidade){
         if(objCidade.getCod() == null){
-            Integer codigo = Dados.listaCidade.size() - 1;
+            Integer codigo = Dados.listaCidade.size() + 1;
             objCidade.setCod(codigo);
             Dados.listaCidade.add(objCidade);
             

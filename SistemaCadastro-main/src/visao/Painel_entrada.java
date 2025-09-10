@@ -158,7 +158,7 @@ public class Painel_entrada extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Painel_entrada().setVisible(true);
+                
                 Painel_entrada form = new Painel_entrada();
                 form.setLocationRelativeTo(null);
                 form.setVisible(true);

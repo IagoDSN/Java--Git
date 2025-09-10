@@ -6,11 +6,13 @@
 package visao;
 import modelo.Cidade;
 import java.util.ArrayList;
+import modelo.CidadeDao;
 /**
  *
  * @author 02338079698
  */
 public class FormCidade extends javax.swing.JDialog {
+    CidadeDao objDaoCidade = new CidadeDao();
 
     /**
      * Creates new form FormCidade
@@ -18,7 +20,47 @@ public class FormCidade extends javax.swing.JDialog {
     public FormCidade(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        atulizaTabela();
+        trataEdicao(false);
     }
+    
+    public void atulizaTabela(){
+        listaCidade.clear();
+        listaCidade.addAll(objDaoCidade.getLista());
+        int linha = listaCidade.size() - 1;
+        if(linha >= 0){
+            tbl_cidades.setRowSelectionInterval(linha, linha);
+            tbl_cidades.scrollRectToVisible(tbl_cidades.getCellRect(linha, linha, true));
+        }
+    }
+    
+    private void trataEdicao(boolean editando){
+        btn_cancelar.setEnabled(editando);
+        btn_salva.setEnabled(editando);
+        btn_editar.setEnabled(!editando);
+        
+        int linha = listaCidade.size() -1;
+        if(linha<0){
+            btn_excluir.setEnabled(false);
+            btn_editar.setEnabled(false);
+            input_cidade.setText("");
+            input_codigo.setText("");
+            
+        }else{
+            btn_excluir.setEnabled(!editando);
+            btn_editar.setEnabled(!editando);
+        }
+        btn_novo.setEnabled(!editando);
+        btn_fechar.setEnabled(!editando);
+        btn_primeiro.setEnabled(!editando);
+        btn_proximo.setEnabled(!editando);
+        btn_anterior.setEnabled(!editando);
+        btn_ultimo.setEnabled(!editando);
+        input_cidade.setEnabled(editando);
+        cbx_uf.setEnabled(editando);
+        tbl_cidades.setEnabled(editando);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,18 +199,43 @@ public class FormCidade extends javax.swing.JDialog {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Ações"));
 
         btn_novo.setText("Novo");
+        btn_novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_novoActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_novo);
 
         btn_editar.setText("Editar");
+        btn_editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editarActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_editar);
 
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_cancelar);
 
         btn_salva.setText("Salvar");
+        btn_salva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salvaActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_salva);
 
         btn_excluir.setText("Excluir");
+        btn_excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_excluirActionPerformed(evt);
+            }
+        });
         jPanel3.add(btn_excluir);
 
         jLabel1.setText("Código:");
@@ -278,6 +345,51 @@ public class FormCidade extends javax.swing.JDialog {
     private void input_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_codigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_input_codigoActionPerformed
+
+    private void btn_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novoActionPerformed
+        // TODO add your handling code here:
+        trataEdicao(true);
+        listaCidade.add(new Cidade());
+        int linha = listaCidade.size() - 1;
+        tbl_cidades.setRowSelectionInterval(linha, linha);
+        btn_novo.requestFocus();
+        
+        
+        
+        
+    }//GEN-LAST:event_btn_novoActionPerformed
+
+    private void btn_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvaActionPerformed
+        // TODO add your handling code here:
+        trataEdicao(false);
+        int linhaselecionada = tbl_cidades.getSelectedRow();
+        Cidade objcidade = listaCidade.get(linhaselecionada);
+        objDaoCidade.salvar(objcidade);
+        atulizaTabela();
+        
+        
+    }//GEN-LAST:event_btn_salvaActionPerformed
+
+    private void btn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_excluirActionPerformed
+        // TODO add your handling code here:
+        int linhaSelecionada = tbl_cidades.getSelectedRow();
+        Cidade objCidade = listaCidade.get(linhaSelecionada);
+        objDaoCidade.salvar(objCidade);
+        atulizaTabela();
+        trataEdicao(false);
+    }//GEN-LAST:event_btn_excluirActionPerformed
+
+    private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        // TODO add your handling code here:
+        trataEdicao(true);
+        input_cidade.requestFocus();
+    }//GEN-LAST:event_btn_editarActionPerformed
+
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        // TODO add your handling code here:
+        trataEdicao(false);
+        atulizaTabela();
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
