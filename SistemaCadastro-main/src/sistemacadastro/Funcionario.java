@@ -11,26 +11,31 @@ import java.util.Objects;
 
 /**
  *
- * @author Tulio Dias
+ * @author 02338079698
  */
 public class Funcionario implements Serializable{
-
-    public Funcionario() {
-    }
-    
-    private Integer codigoFucionario;
+    private Integer codigoFuncionario;
     private String nomeFuncionario;
     private Double salarioFuncionario;
     private Calendar nascimentoFuncionario;
+    private Cidade objCidade; 
     
-    private Cidade objCidade;
-
-    public Integer getCodigoFucionario() {
-        return codigoFucionario;
+    public Funcionario() {
+        
     }
 
-    public void setCodigoFucionario(Integer codigoFucionario) {
-        this.codigoFucionario = codigoFucionario;
+    public Funcionario(Integer codigoFuncionario, String nomeFuncionario, Cidade objCidade) {
+        this.codigoFuncionario = codigoFuncionario;
+        this.nomeFuncionario = nomeFuncionario;
+        this.objCidade = objCidade;
+    }
+
+    public Integer getCodigoFuncionario() {
+        return codigoFuncionario;
+    }
+
+    public void setCodigoFuncionario(Integer codigoFuncionario) {
+        this.codigoFuncionario = codigoFuncionario;
     }
 
     public String getNomeFuncionario() {
@@ -67,8 +72,8 @@ public class Funcionario implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.codigoFucionario);
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.codigoFuncionario);
         return hash;
     }
 
@@ -84,7 +89,7 @@ public class Funcionario implements Serializable{
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (!Objects.equals(this.codigoFucionario, other.codigoFucionario)) {
+        if (!Objects.equals(this.codigoFuncionario, other.codigoFuncionario)) {
             return false;
         }
         return true;

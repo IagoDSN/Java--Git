@@ -10,10 +10,12 @@ import java.util.List;
 
 /**
  *
- * @author Tulio Dias
+ * @author 02338079698
  */
 public class Dados {
     public static List<Cidade> listaCidade = new ArrayList<>();
     public static List<Funcionario> listaFuncionario = new ArrayList<>();
+    
+    
     
 }
