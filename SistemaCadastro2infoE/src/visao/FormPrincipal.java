@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 13410289682
+ * @author Tulio Dias
  */
 public class FormPrincipal extends javax.swing.JFrame {
 
@@ -21,7 +21,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +30,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
+        barraMenu = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
         itemMenuCidade = new javax.swing.JMenuItem();
         itemMenuFuncionario = new javax.swing.JMenuItem();
@@ -39,7 +38,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         itemMenuSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SistemaDeCadastro");
+        setTitle("Sistema de Cadastro");
 
         menuCadastro.setText("Cadastro");
 
@@ -51,17 +50,12 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
         menuCadastro.add(itemMenuCidade);
 
-        itemMenuFuncionario.setText("Funcionario");
+        itemMenuFuncionario.setText("Funcionário");
         menuCadastro.add(itemMenuFuncionario);
 
-        jMenuBar1.add(menuCadastro);
+        barraMenu.add(menuCadastro);
 
         menuAjuda.setText("Ajuda");
-        menuAjuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAjudaActionPerformed(evt);
-            }
-        });
 
         itemMenuSobre.setText("Sobre");
         itemMenuSobre.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +65,9 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
         menuAjuda.add(itemMenuSobre);
 
-        jMenuBar1.add(menuAjuda);
+        barraMenu.add(menuAjuda);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,29 +77,25 @@ public class FormPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itemMenuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuCidadeActionPerformed
-        // TODO add your handling code here:
-        FormCidade form = new FormCidade(this, true);
-        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
-        form.setLocationRelativeTo(null);
-        form.setResizable(false);
-        form.setVisible(true);
-    }//GEN-LAST:event_itemMenuCidadeActionPerformed
-
-    private void menuAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAjudaActionPerformed
-        // TODO add your handling code here
-        JOptionPane.showMessageDialog(null, "Sistema de cadastro\nDireitos Reservados\nVersão: 1.0");
-    }//GEN-LAST:event_menuAjudaActionPerformed
-
     private void itemMenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSobreActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Sistema de Cadastro\nDireitos Reservados\nVersão: 1.0");
     }//GEN-LAST:event_itemMenuSobreActionPerformed
+
+    private void itemMenuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuCidadeActionPerformed
+        // TODO add your handling code here:
+        FormCidade form = new FormCidade(this,true);//this: chama a partir deste form e true: modal-> sobrepõem o form principal
+        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);// não deixa fechar o form pelo x
+        form.setLocationRelativeTo(null);//centro da tela
+        form.setResizable(false);//retira o botão maximizar
+        form.setVisible(true);//visualiza o formulário
+    }//GEN-LAST:event_itemMenuCidadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,18 +127,20 @@ public class FormPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormPrincipal().setVisible(true);
+                //new FormPrincipal().setVisible(true);
                 FormPrincipal form = new FormPrincipal();
-                form.setLocationRelativeTo(null);
+                form.setLocationRelativeTo(null);//centraliza o formulário
+                form.setVisible(true); // visualiza o formulário
+              
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenuItem itemMenuCidade;
     private javax.swing.JMenuItem itemMenuFuncionario;
     private javax.swing.JMenuItem itemMenuSobre;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenu menuCadastro;
     // End of variables declaration//GEN-END:variables

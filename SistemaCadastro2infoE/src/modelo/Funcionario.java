@@ -11,26 +11,26 @@ import java.util.Objects;
 
 /**
  *
- * @author 13410289682
+ * @author Tulio Dias
  */
 public class Funcionario implements Serializable{
 
     public Funcionario() {
     }
     
-    private Integer codigoFuncionario;
+    private Integer codigoFucionario;
     private String nomeFuncionario;
     private Double salarioFuncionario;
     private Calendar nascimentoFuncionario;
     
     private Cidade objCidade;
 
-    public Integer getCodigoFuncionario() {
-        return codigoFuncionario;
+    public Integer getCodigoFucionario() {
+        return codigoFucionario;
     }
 
-    public void setCodigoFuncionario(Integer codigoFuncionario) {
-        this.codigoFuncionario = codigoFuncionario;
+    public void setCodigoFucionario(Integer codigoFucionario) {
+        this.codigoFucionario = codigoFucionario;
     }
 
     public String getNomeFuncionario() {
@@ -67,8 +67,8 @@ public class Funcionario implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.codigoFuncionario);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.codigoFucionario);
         return hash;
     }
 
@@ -84,11 +84,12 @@ public class Funcionario implements Serializable{
             return false;
         }
         final Funcionario other = (Funcionario) obj;
-        if (!Objects.equals(this.codigoFuncionario, other.codigoFuncionario)) {
+        if (!Objects.equals(this.codigoFucionario, other.codigoFucionario)) {
             return false;
         }
         return true;
     }
+    
     
     
 }

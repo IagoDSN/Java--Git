@@ -9,24 +9,26 @@ import java.util.List;
 
 /**
  *
- * @author 13410289682
+ * @author Tulio Dias
  */
-public class CidadeDao {
+public class CidadeDao { //DAO-> Data Acess Object
+    
     public List<Cidade> getLista(){
-        return Dados.listCidade;
+        return Dados.listaCidade;
     }
     
     public boolean salvar(Cidade objCidade){
-        if(objCidade.getCodigoCidade() == null){
-            Integer Codigo = Dados.listCidade.size() - 1;
-            objCidade.setCodigoCidade(Codigo);
-            Dados.listCidade.add(objCidade);
+        if(objCidade.getCodigoCidade()==null){
+            Integer codigo = Dados.listaCidade.size()-1;
+            objCidade.setCodigoCidade(codigo);
+            Dados.listaCidade.add(objCidade);
         }
         return true;
     }
     
     public boolean remover(Cidade objCidade){
-        Dados.listCidade.remove(objCidade);
+        Dados.listaCidade.remove(objCidade);
         return true;
     }
+    
 }

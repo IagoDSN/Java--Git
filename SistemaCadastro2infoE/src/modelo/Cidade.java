@@ -10,14 +10,14 @@ import java.util.Objects;
 
 /**
  *
- * @author 13410289682
+ * @author Tulio Dias
  */
-public class Cidade implements Serializable{
+public class Cidade implements Serializable{ // padrão javabeans, seguindo pelo frame beansbinding
     private Integer codigoCidade;
     private String nomeCidade;
     private String ufCidade;
 
-    public Cidade() {
+    public Cidade() { // padrão javabeans
     }
 
     public Integer getCodigoCidade() {
@@ -46,8 +46,8 @@ public class Cidade implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.codigoCidade);
+        int hash = 3;
+        hash = 31 * hash + Objects.hashCode(this.codigoCidade);
         return hash;
     }
 
@@ -68,6 +68,9 @@ public class Cidade implements Serializable{
         }
         return true;
     }
+    
+    
+    
     
     
 }
