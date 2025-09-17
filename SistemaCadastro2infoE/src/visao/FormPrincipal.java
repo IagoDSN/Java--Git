@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 02338079698
+ * @author Tulio Dias
  */
-public class Painel_entrada extends javax.swing.JFrame {
+public class FormPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Painel_entrada
+     * Creates new form FormPrincipal
      */
-    public Painel_entrada() {
+    public FormPrincipal() {
         initComponents();
     }
 
@@ -30,54 +30,32 @@ public class Painel_entrada extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
         barraMenu = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        itemMenuCidade = new javax.swing.JMenuItem();
+        itemMenuFuncionario = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         itemMenuSobre = new javax.swing.JMenuItem();
 
-        jMenuItem1.setText("jMenuItem1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema Cadastro");
+        setTitle("Sistema de Cadastro");
 
         menuCadastro.setText("Cadastro");
-        menuCadastro.addActionListener(new java.awt.event.ActionListener() {
+
+        itemMenuCidade.setText("Cidade");
+        itemMenuCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCadastroActionPerformed(evt);
+                itemMenuCidadeActionPerformed(evt);
             }
         });
+        menuCadastro.add(itemMenuCidade);
 
-        jMenuItem2.setText("Cidade");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        menuCadastro.add(jMenuItem2);
-
-        jMenuItem5.setText("Funcionario");
-        menuCadastro.add(jMenuItem5);
+        itemMenuFuncionario.setText("Funcionário");
+        menuCadastro.add(itemMenuFuncionario);
 
         barraMenu.add(menuCadastro);
 
-        jMenu2.setText("Venda");
-
-        jMenuItem3.setText("jMenuItem3");
-        jMenu2.add(jMenuItem3);
-
-        barraMenu.add(jMenu2);
-
         menuAjuda.setText("Ajuda");
-        menuAjuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAjudaActionPerformed(evt);
-            }
-        });
 
         itemMenuSobre.setText("Sobre");
         itemMenuSobre.addActionListener(new java.awt.event.ActionListener() {
@@ -95,38 +73,29 @@ public class Painel_entrada extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 326, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        FormCidade form = new FormCidade(this,true);//this: chama a a partir deste form e true: modal sobrepoem o form principal
-        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);//nao deica fechar o form pelo x
-        form.setLocationRelativeTo(null); //centro na tela
-        form.setResizable(false); //retira o botao maximizar
- 
-        form.setVisible(true); //visualizas o formulario
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void menuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuCadastroActionPerformed
-
-    private void menuAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAjudaActionPerformed
-        // TODO add your handling code here:
-            
-    }//GEN-LAST:event_menuAjudaActionPerformed
-
     private void itemMenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSobreActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Sistema de Cadastro\nDireitos Reservados\nVersão: 1.0");
     }//GEN-LAST:event_itemMenuSobreActionPerformed
+
+    private void itemMenuCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuCidadeActionPerformed
+        // TODO add your handling code here:
+        FormCidade form = new FormCidade(this,true);//this: chama a partir deste form e true: modal-> sobrepõem o form principal
+        form.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);// não deixa fechar o form pelo x
+        form.setLocationRelativeTo(null);//centro da tela
+        form.setResizable(false);//retira o botão maximizar
+        form.setVisible(true);//visualiza o formulário
+    }//GEN-LAST:event_itemMenuCidadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,35 +114,33 @@ public class Painel_entrada extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Painel_entrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Painel_entrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Painel_entrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Painel_entrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                Painel_entrada form = new Painel_entrada();
-                form.setLocationRelativeTo(null);
-                form.setVisible(true);
+                //new FormPrincipal().setVisible(true);
+                FormPrincipal form = new FormPrincipal();
+                form.setLocationRelativeTo(null);//centraliza o formulário
+                form.setVisible(true); // visualiza o formulário
+              
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenuItem itemMenuCidade;
+    private javax.swing.JMenuItem itemMenuFuncionario;
     private javax.swing.JMenuItem itemMenuSobre;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenu menuCadastro;
     // End of variables declaration//GEN-END:variables

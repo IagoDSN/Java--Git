@@ -6,31 +6,29 @@
 package modelo;
 
 import java.util.List;
-import modelo.Cidade;
+
 /**
  *
- * @author 02338079698
+ * @author Tulio Dias
  */
-public class CidadeDao {
+public class CidadeDao { //DAO-> Data Acess Object
     
     public List<Cidade> getLista(){
         return Dados.listaCidade;
     }
     
-    
     public boolean salvar(Cidade objCidade){
-        if(objCidade.getCod() == null){
-            Integer codigo = Dados.listaCidade.size() + 1;
-            objCidade.setCod(codigo);
+        if(objCidade.getCodigoCidade()==null){
+            Integer codigo = Dados.listaCidade.size()+1;
+            objCidade.setCodigoCidade(codigo);
             Dados.listaCidade.add(objCidade);
-            
         }
         return true;
-        
     }
     
     public boolean remover(Cidade objCidade){
         Dados.listaCidade.remove(objCidade);
         return true;
     }
+    
 }
