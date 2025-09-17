@@ -394,7 +394,7 @@ public class FormCidade extends javax.swing.JDialog {
 
     private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
         // TODO add your handling code here:
-        int linha = tblCidade.countComponents() + 1;
+        int linha = tblCidade.getRowCount()- 1;
         tblCidade.setRowSelectionInterval(linha, linha);
         tblCidade.scrollRectToVisible(tblCidade.getCellRect(linha, 0, true));
     }//GEN-LAST:event_btnUltimoActionPerformed
