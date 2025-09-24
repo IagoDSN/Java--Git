@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package visao;
-import modelo.Cidade;
+import sistemacadastro.Cidade;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.CidadeDao;
+import sistemacadastro.CidadeDao;
 /**
  *
  * @author 02338079698
