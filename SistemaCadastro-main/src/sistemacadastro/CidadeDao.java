@@ -61,7 +61,24 @@ public class CidadeDao {
             return false;
         }
     }
-    
+    public boolean alterar(Cidade objCidade) {
+        String sql = "update cidade SET nomeCidade=?, UfCidade=? WHERE codCidade=?";
+        try {
+            PreparedStatement pst = ModuloConexao.getPreparableStatement(sql);
+            pst.setString(1, objCidade.getNome());
+            pst.setString(2, objCidade.getUf());
+            if (pst.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Cidade alterada com sucesso!");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Cidade não alterada!");
+                return false;
+            }
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Erro de SQL: " + ex.getMessage());
+            return false;
+        }
+    }
 
     public boolean salvar(Cidade objCidade) {
         if (objCidade.getCod() == null) {
@@ -75,7 +92,21 @@ public class CidadeDao {
     }
 
     public boolean remover(Cidade objCidade) {
-        Dados.listaCidade.remove(objCidade);
-        return true;
+        String sql = "Delete from Cidade where codCidade = ?";
+        try {
+            PreparedStatement pst = ModuloConexao.getPreparableStatement(sql);
+            pst.setString(1, objCidade.getNome());
+            pst.setString(2, objCidade.getUf());
+            if (pst.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Cidade alterada com sucesso!");
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Cidade não alterada!");
+                return false;
+            }
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Erro de SQL: " + ex.getMessage());
+            return false;
+        }
     }
 }
